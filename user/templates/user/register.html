@@ -1,0 +1,13 @@
+{% extends 'MediaManager/base.html' %}
+{% block title %}sign up{% endblock title %}
+{% block content %}
+<h2 class="text-center">sign up</h2>
+{% if messages %}
+{{messages}}
+{% endif %}
+<form method="post">
+{% csrf_token %}
+{{SignUpForm}}
+<input type="submit" class="btn btn-success" value="sign up"/>
+</form>
+{% endblock content %}

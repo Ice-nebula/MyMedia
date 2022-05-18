@@ -1,0 +1,13 @@
+{% extends 'MediaManager/base.html' %}
+{% block title %}sign in{% endblock title %}
+{% block content %}
+<h1 class="text-center">sign in</h1>
+{% if messages %}
+{{message}}
+{% endif %}
+<form method="post">
+{% csrf_token %}
+{{form}}
+<input type="submit" class="btn btn-success" value="sign in"/>
+</form>
+{% endblock content %}
