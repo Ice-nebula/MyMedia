@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,authenticate,logout
-from user.forms import SignUpForm
+from users.forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 
@@ -14,9 +14,9 @@ def register(request):
 	else:
 		form = SignUpForm()
 	context = {"SignUpForm":form}
-	return render(request,'user/register.html',context)
+	return render(request,'users/register.html',context)
 
-def login(request):
+def Login(request):
 	if request.user.is_authenticated:
 		return redirect("/")
 #if method
@@ -34,7 +34,7 @@ def login(request):
 	else:
 		form = AuthenticationForm()
 	context = {"form":form}
-	return render(request,'user/login.html',context)
+	return render(request,'users/login.html',context)
 
 def Logout(request):
 	logout(request)
