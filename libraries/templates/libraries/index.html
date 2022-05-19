@@ -7,7 +7,9 @@
   <div class="row">
 {% for lib in object_list %}
     <div class="col">
-<h1 class="text-center">{{lib.name}}</h1>
+<h1 class="text-center">
+<a href="{{lib.get_absolute_url}}">{{lib.name}}</a>
+</h1>
 <div>
 created by : {{lib.auther.username}}
 </div><!box show auther>
