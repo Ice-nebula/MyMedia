@@ -1,5 +1,12 @@
 {% extends 'libraries/base.html' %}
 {% block title %}{{data.name}}{% endblock title %}
 {% block content %}
+<div class="row">
+{% if data.auther.id == user.id%}
+<div class="col">
+<h1 class = "text-center text-info">{{data.name}}</h1>
 
+</div>
+{% endif %}
+</div>
 {% endblock content %}
