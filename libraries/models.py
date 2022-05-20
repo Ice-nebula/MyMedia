@@ -9,6 +9,7 @@ class Library(models.Model):
 	description = models.TextField(blank=False,null=False)
 	date_created = models.DateTimeField(auto_now=True,null=False,editable=False)
 	auther = models.ForeignKey(User,on_delete=models.CASCADE,related_name="auther")
+	private = models.BooleanField(default=False)
 	def __str__(self) -> str:
 		return self.name
 	def get_absolute_url(self):
